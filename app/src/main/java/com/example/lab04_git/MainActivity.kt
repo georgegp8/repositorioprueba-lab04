@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,11 +12,18 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
@@ -24,6 +32,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.lab04_git.ui.theme.Lab04gitTheme
+import androidx.compose.runtime.*
 
 
 class MainActivity : ComponentActivity() {
@@ -40,6 +49,7 @@ class MainActivity : ComponentActivity() {
                         ciclo = "IV",
                         modifier = Modifier.padding(innerPadding)
                     )
+                    SliderSimple()
                 }
             }
         }
@@ -97,6 +107,27 @@ fun Tarjeta(
     }
 }
 
+@Composable
+fun SliderSimple() {
+    var valor by remember { mutableFloatStateOf(50f) }
+
+    Column(
+        modifier = Modifier
+            .padding(32.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text("Valor seleccionado: ${valor.toInt()}", fontSize = 20.sp)
+        Spacer(modifier = Modifier.height(16.dp))
+        Slider(
+            value = valor,
+            onValueChange = { valor = it },
+            valueRange = 0f..100f
+        )
+    }
+}
+
+
 
 @Preview(showBackground = true)
 @Composable
@@ -108,5 +139,13 @@ fun TarjetaPreview() {
             "Diseño de Software",
             "IV"
         )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewSliderSimple() {
+    Lab04gitTheme {
+        SliderSimple()
     }
 }
