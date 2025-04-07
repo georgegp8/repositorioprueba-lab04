@@ -73,7 +73,7 @@ fun Tarjeta(
         shape = RoundedCornerShape(16.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color(0xFFE3F2FD) // Celeste claro
+            containerColor = Color(0xFFFFA500) // naranja
         )
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
@@ -81,7 +81,7 @@ fun Tarjeta(
                 text = nombres,
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color.Black
+                color = Color.Blue
             )
             Spacer(modifier = Modifier.height(8.dp))
 
@@ -95,7 +95,7 @@ fun Tarjeta(
             Text(
                 text = carrera,
                 fontSize = 16.sp,
-                color = Color(0xFF1565C0) // Azul fuerte
+                color = Color(0xFF800080)//morado
             )
             Spacer(modifier = Modifier.height(8.dp))
 
