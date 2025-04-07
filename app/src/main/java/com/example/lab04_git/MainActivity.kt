@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Scaffold
@@ -50,6 +51,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(innerPadding)
                     )
                     SliderSimple()
+                    AlertaSimple()
                 }
             }
         }
@@ -127,6 +129,34 @@ fun SliderSimple() {
     }
 }
 
+@Composable
+fun AlertaSimple() {
+    var mostrarDialogo by remember { mutableStateOf(false) }
+
+    Column(
+        modifier = Modifier
+            .padding(32.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Button(onClick = { mostrarDialogo = true }) {
+            Text("Mostrar alerta")
+        }
+
+        if (mostrarDialogo) {
+            AlertDialog(
+                onDismissRequest = { mostrarDialogo = false },
+                title = { Text("¡Alerta!") },
+                text = { Text("Este es un mensaje dentro de un AlertDialog.") },
+                confirmButton = {
+                    TextButton(onClick = { mostrarDialogo = false }) {
+                        Text("Cerrar")
+                    }
+                }
+            )
+        }
+    }
+}
 
 
 @Preview(showBackground = true)
@@ -147,5 +177,13 @@ fun TarjetaPreview() {
 fun PreviewSliderSimple() {
     Lab04gitTheme {
         SliderSimple()
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewAlertaSimple() {
+    Lab04gitTheme {
+        AlertaSimple()
     }
 }
