@@ -139,24 +139,54 @@ fun AlertaSimple() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Button(onClick = { mostrarDialogo = true }) {
-            Text("Mostrar alerta")
+        Button(
+            onClick = { mostrarDialogo = true },
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Text(
+                text = "Alerta main",
+                fontSize = 20.sp, // Cambiar tamaño de texto del botón
+                fontWeight = FontWeight.Bold, // Cambiar estilo de la letra
+                color = Color.White
+            )
         }
 
         if (mostrarDialogo) {
             AlertDialog(
                 onDismissRequest = { mostrarDialogo = false },
-                title = { Text("¡Alerta!") },
-                text = { Text("Este es un mensaje dentro de un AlertDialog.") },
+                title = {
+                    Text(
+                        text = "¡Alerta!",
+                        fontSize = 24.sp, // Cambiar tamaño de fuente del título
+                        fontWeight = FontWeight.Bold, // Cambiar estilo de la letra
+                        color = Color.Red
+                    )
+                },
+                text = {
+                    Text(
+                        text = "Este es un mensaje dentro de un AlertDialog.",
+                        fontSize = 16.sp, // Cambiar tamaño de fuente del texto
+                        color = Color.Gray
+                    )
+                },
                 confirmButton = {
-                    TextButton(onClick = { mostrarDialogo = false }) {
-                        Text("Cerrar")
+                    TextButton(
+                        onClick = { mostrarDialogo = false },
+                        modifier = Modifier.padding(8.dp)
+                    ) {
+                        Text(
+                            text = "Cerrar",
+                            fontSize = 18.sp, // Cambiar tamaño de texto del botón de confirmación
+                            fontWeight = FontWeight.Bold, // Cambiar estilo de la letra
+                            color = Color.Blue
+                        )
                     }
                 }
             )
         }
     }
 }
+
 
 
 @Preview(showBackground = true)
