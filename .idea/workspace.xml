@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5899c19-218a-4285-b813-1c1f01085e56" name="Changes" comment="Utilizando el Control Slider">
+    <list default="true" id="c5899c19-218a-4285-b813-1c1f01085e56" name="Changes" comment="Utilizando el Control AlertDialog">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lab04_git/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lab04_git/MainActivity.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +51,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Android App.app.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -184,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744045911467</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Utilizando el Control AlertDialog">
+      <option name="closed" value="true" />
+      <created>1744046161291</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1744046161291</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -192,6 +201,7 @@
     <MESSAGE value="Subiendo cambios" />
     <MESSAGE value="Utilizando el Control Card" />
     <MESSAGE value="Utilizando el Control Slider" />
-    <option name="LAST_COMMIT_MESSAGE" value="Utilizando el Control Slider" />
+    <MESSAGE value="Utilizando el Control AlertDialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="Utilizando el Control AlertDialog" />
   </component>
 </project>
